@@ -1,9 +1,8 @@
 package Basic;
 public class ChangeProper {
     public static void main(String[] args) {
-        String fullName = "nguyễn văn a"; // Thay đổi họ tên tùy ý
-        String properName = formatName(fullName);
-        System.out.println("Họ tên định dạng Proper: " + properName);
+        String fullName = "nguyễn huỳnh duyên";
+        System.out.println("Họ tên định dạng Proper: " + formatName(fullName));
     }
 
     public static String formatName(String fullName) {

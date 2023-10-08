@@ -26,7 +26,8 @@ public class MathOperations {
 
         // Xuất ra mã nhị phân của n
         String binary = toBinary(n);
-        System.out.println("Mã nhị phân của " + n + " là: " + binary);
+        System.out.println("Mã nhị phân ( phương thức ) của " + n + " là: " + binary);
+        System.out.println("Mã nhị phân ( thủ công ) của " + n + " là: " + toBinaryHand(n));
 
         // Đóng Scanner sau khi sử dụng
         scanner.close();
@@ -63,5 +64,26 @@ public class MathOperations {
     public static String toBinary(int n) {
         return Integer.toBinaryString(n);
     }
+    public static String toBinaryHand(int n) {
+        if (n == 0) {
+            return "0"; // Xử lý trường hợp đặc biệt khi số n là 0
+        }
+
+        StringBuilder binary = new StringBuilder();
+        int absN = Math.abs(n);
+
+        while (absN > 0) {
+            int remainder = absN % 2;
+            binary.insert(0, remainder); // Chèn chữ số nhị phân vào đầu chuỗi
+            absN = absN / 2;
+        }
+
+        if (n < 0) {
+            binary.insert(0, "-"); // Nếu n là số âm, thêm dấu trừ vào đầu chuỗi
+        }
+
+        return binary.toString();
+    }
+
 }
 //heloo
